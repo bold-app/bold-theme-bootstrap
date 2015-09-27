@@ -1,0 +1,43 @@
+!!!
+%html{itemscope: true, itemtype: 'http://schema.org/WebPage'}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{name: "HandheldFriendly", content: "True"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title= content.title
+    = stylesheet_link_tag 'bold-theme-bootstrap', media: 'all'
+    = bold_meta
+    = yield :html_head
+
+  %body
+    = bold_header
+
+    %nav.navbar.navbar-default.navbar-inverse
+      .container
+        .navbar-header
+          %a.navbar-brand{href:'/'}
+            - if site.logo?
+              = site.logo_tag
+            - else
+              = site.name
+
+        %ul.nav.navbar-nav.navbar-right
+          - site.navigation.each_topic do |topic|
+            %li
+              %a{ href: topic.url }= topic.name
+
+    = yield
+
+    %footer
+      .container
+        .row
+          .col-xs-12
+            %p.small.pull-right
+              = bold_logo text: t('.published_with')
+            - if html = site.theme_value('footer_html')
+              %p.small.pull-left
+                = raw html
+
+    = bold_footer
+

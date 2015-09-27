@@ -1,0 +1,8 @@
+en:
+  themes:
+    bootstrap:
+      layout:
+        published_with: Published with
+      settings:
+        footer_html: Footer HTML
+
