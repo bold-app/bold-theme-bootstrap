@@ -1,0 +1,36 @@
+.container{class: content.css_class}
+  .row
+    .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+      = content.body_html
+
+  .row
+    .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+
+      = contact_form do |f|
+        .row
+          .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+            = flash_message
+        .row
+          .col-xs-12.col-sm-6
+            = f.input :sender_name, required: false, label: t('.name')
+        .row
+          .col-xs-12.col-sm-6
+            = f.input :sender_email, required: false, label: t('.email')
+        .row
+          .col-xs-12
+            = f.input :subject, required: false, label: t('.subject')
+        .row
+          .col-xs-12
+            = f.input :body, required: false, label: t('.body'), input_html: { rows: 8 }, as: :text
+        .row
+          .col-xs-12
+            %p
+              = f.button :submit, t('.submit'), class: 'btn-primary'
+
+        .row
+          .col-xs-12
+            %p.small= raw t '.disclaimer'
+
+
+
+

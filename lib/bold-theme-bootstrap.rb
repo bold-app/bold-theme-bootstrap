@@ -9,6 +9,7 @@ module Bold
             name 'Bootstrap'
 
             template :default
+            template :contact
 
             assets 'bold-theme-bootstrap.css', 'bold-theme-bootstrap.js'
 

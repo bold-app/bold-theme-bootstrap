@@ -1,6 +1,13 @@
 en:
   themes:
     bootstrap:
+      contact:
+        name: Your name
+        email: Your email address
+        subject: Subject
+        body: Your message
+        submit: Send
+        disclaimer: "For the sake of spam checking any data you submit, including your IP address, will be transferred to the US based Akismet web service (akismet.com). If that's not acceptable for you, don't use this form."
       layout:
         published_with: Published with
       settings:
